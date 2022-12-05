@@ -1,0 +1,19 @@
+﻿<ContentDialog
+    x:Class="Bankrekening.Pages.OvermakenDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bankrekening.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Geld Overmaken"
+    PrimaryButtonText="Annuleren"
+    SecondaryButtonText="Overmaken"
+    PrimaryButtonClick="ContentDialog_AnnulerenButtonClick"
+    SecondaryButtonClick="ContentDialog_OvermakenButtonClick">
+
+    <StackPanel>
+        <TextBox x:Name="InputRekening" TextWrapping="Wrap" VerticalAlignment="Center" PlaceholderText="Iban" Margin="0, 5" />
+        <TextBox x:Name="InputBedrag" TextWrapping="Wrap" VerticalAlignment="Center" PlaceholderText="Bedrag" BeforeTextChanging="InputBedrag_BeforeTextChanging" Margin="0, 5" />
+    </StackPanel>
+</ContentDialog>

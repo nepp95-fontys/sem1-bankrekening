@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Bankrekening.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bankrekening"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="WhiteSmoke">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Neppenhof Bank" TextAlignment="Center" Foreground="Black" FontSize="48" FontFamily="Bodoni MT Poster Compressed" Margin="0,20,0,0" Height="55" VerticalAlignment="Top" />
+        <controls:DataGrid x:Name="GridData" Background="#FFBDBDBD" Margin="0,100,0,0" AutoGenerateColumns="False">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="Naam" Binding="{Binding Name}" />
+                <controls:DataGridTextColumn Header="Rekeningnummer" Binding="{Binding Iban}" />
+                <controls:DataGridTextColumn Header="Saldo" Binding="{Binding Saldo}" />
+                <controls:DataGridTemplateColumn>
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnOpnemen" Content="Opnemen" Click="BtnOpnemen_Click"></Button>
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
+                </controls:DataGridTemplateColumn>
+                <controls:DataGridTemplateColumn>
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnStorten" Content="Storten" Click="BtnStorten_Click"></Button>
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
+                </controls:DataGridTemplateColumn>
+                <controls:DataGridTemplateColumn>
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnOvermaken" Content="Overmaken" Click="BtnOvermaken_Click"></Button>
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
+                </controls:DataGridTemplateColumn>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+    </Grid>
+</Page>
